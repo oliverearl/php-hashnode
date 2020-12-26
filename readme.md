@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/oliverearl/php-hashnode">
-    <img src=".github/Readme.png" alt="PHP Hashnode">
+    <img src=".github/PHP-Hashnode.png" alt="PHP Hashnode" height="500" width="500">
   </a>
 
 <h3 align="center">Unofficial Hashnode API Wrapper for PHP</h3>
