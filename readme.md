@@ -129,15 +129,15 @@ Project Link: [https://github.com/oliverearl/php-hashnode](https://github.com/ol
 * [Hashnode API](https://api.hashnode.com)
 * [Othneil Drew for the README template](https://github.com/othneildrew/Best-README-Template)
 
-[contributors-shield]: https://img.shields.io/github/contributors/oliverearl/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/oliverearl/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/oliverearl/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/oliverearl/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/oliverearl/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/oliverearl/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/oliverearl/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/oliverearl/repo/issues
-[license-shield]: https://img.shields.io/github/license/oliverearl/repo.svg?style=for-the-badge
-[license-url]: https://github.com/oliverearl/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/oliverearl/php-hashnode.svg?style=for-the-badge
+[contributors-url]: https://github.com/oliverearl/php-hashnode/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/oliverearl/php-hashnode.svg?style=for-the-badge
+[forks-url]: https://github.com/oliverearl/php-hashnode/network/members
+[stars-shield]: https://img.shields.io/github/stars/oliverearl/php-hashnode.svg?style=for-the-badge
+[stars-url]: https://github.com/oliverearl/php-hashnode/stargazers
+[issues-shield]: https://img.shields.io/github/issues/oliverearl/php-hashnode.svg?style=for-the-badge
+[issues-url]: https://github.com/oliverearl/php-hashnode/issues
+[license-shield]: https://img.shields.io/github/license/oliverearl/php-hashnode.svg?style=for-the-badge
+[license-url]: https://github.com/oliverearl/php-hashnode/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/oliverearl
