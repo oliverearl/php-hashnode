@@ -6,12 +6,10 @@ use PHPUnit\Framework\TestCase;
 
 use Hashnode\Api\User;
 use Hashnode\Api\Repositories\UserRepository;
-use function MongoDB\BSON\toJSON;
 
 class UserTest extends TestCase
 {
     private string $username;
-    private UserRepository $repository;
     private User $user;
 
     protected function setUp(): void
@@ -19,14 +17,13 @@ class UserTest extends TestCase
         parent::setUp();
 
         $this->username     = 'oliverearl';
-        $this->repository   = new UserRepository();
-        $this->user         = $this->repository->getUser($this->username);
+        $this->user         = (new UserRepository())->getUser($this->username);
     }
 
     /**
-     * @covers ::User
+     * @covers ::User, ::Resource
      */
-    public function test_convert_a_user_into_an_associative_array(): void
+    public function test_a_resource_subclass_can_be_returned_as_an_associative_array(): void
     {
         $associativeArray = $this->user->toArray();
 
@@ -35,12 +32,24 @@ class UserTest extends TestCase
     }
 
     /**
-     * @covers ::User
+     * @covers ::User, ::Resource
      */
-    public function test_convert_a_user_into_json(): void
+    public function test_a_resource_subclass_can_be_returned_as_json(): void
     {
         $json = $this->user->toJson();
 
         $this->assertJson($json);
+    }
+
+    /**
+     * @covers ::User, ::Resource
+     */
+    public function test_a_resource_subclass_properties_can_be_returned_as_an_array(): void
+    {
+        $array = $this->user->getProperties();
+        $needle = 'username';
+
+        $this->assertIsArray($array);
+        $this->assertTrue(in_array($needle, $array));
     }
 }
