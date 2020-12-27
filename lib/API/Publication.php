@@ -22,21 +22,45 @@ class Publication extends Resource
     protected ?string $layout;
     protected ?bool $sitemapSubmitted;
     protected ?bool $tweetedAboutBlog;
-    protected ?string $fbPixelId;
-    protected ?string $gaTrackingId;
+    protected ?string $fbPixelID;
+    protected ?string $gaTrackingID;
     protected ?bool $isAMPEnabled;
     protected ?string $metaTags;
     protected ?string $imprint;
     protected ?string $imprintMarkdown;
-    protected ?array $links;
-    protected ?array $posts;
 
-    public function __construct(array $properties)
+    protected Link $links;
+    protected array $posts = [];
+
+    public function __construct(array $properties = [])
     {
         foreach ($properties as $key => $value) {
-            if (property_exists($this, $key) && !is_null($value)) {
+            if (is_array($value)) {
+                switch ($key) {
+                    case 'links':
+                        $this->setLinks($value);
+                        break;
+                    case 'posts':
+                        $this->setPosts($value);
+                        break;
+                    default:
+                        break;
+                }
+            } else if (property_exists($this, $key) && !is_null($value)) {
                 $this->$key = $value;
             }
         }
+    }
+
+    public function setPosts(array $posts): void
+    {
+        foreach ($posts as $post) {
+            $this->posts[] = new Post($post);
+        }
+    }
+
+    public function setLinks(array $links): void
+    {
+        $this->links = new Link($links);
     }
 }

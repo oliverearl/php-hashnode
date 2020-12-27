@@ -22,11 +22,11 @@ class User extends Resource
     protected ?Publication $publication;
     protected ?string $blogHandle;
     protected ?string $publicationDomain;
-    protected ?array $followers;
+    protected array $followers = [];
 
-    public function __construct(array $properties)
+    public function __construct(array $properties = [])
     {
-        foreach ($properties['user'] as $key => $value) {
+        foreach ($properties as $key => $value) {
             if (is_array($value)) {
                 switch ($key) {
                     case 'socialMedia':
@@ -92,7 +92,7 @@ class User extends Resource
     /**
      * @return SocialMedia
      */
-    public function getSocialMedia(): SocialMedia
+    public function getSocialMedia(): ?SocialMedia
     {
         return $this->socialMedia;
     }

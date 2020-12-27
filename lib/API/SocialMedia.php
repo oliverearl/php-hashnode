@@ -12,7 +12,7 @@ class SocialMedia extends Resource
     protected ?string $website;
     protected ?string $facebook;
 
-    public function __construct(array $properties)
+    public function __construct(array $properties = [])
     {
         foreach ($properties as $key => $value) {
             if (property_exists($this, $key) && !is_null($value)) {
