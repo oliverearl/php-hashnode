@@ -8,7 +8,7 @@
         "graphql"
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.4",
         "gmostafa/php-graphql-client": "^1.8"
     },
     "require-dev": {
