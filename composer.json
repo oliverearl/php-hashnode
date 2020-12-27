@@ -10,7 +10,8 @@
     "require": {
         "php": "^7.4",
         "gmostafa/php-graphql-client": "^1.8",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-spltype": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
