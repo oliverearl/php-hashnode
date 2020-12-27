@@ -2,14 +2,12 @@
 
 namespace Hashnode\Api\Enums;
 
-use SplEnum;
+use MyCLabs\Enum\Enum;
 
-class FeedType extends SplEnum
+class FeedType extends Enum
 {
-    const COMMUNITY     = 'COMMUNITY';
-    const BEST          = 'BEST';
-    const NEW           = 'NEW';
-    const FEATURED      = 'FEATURED';
-
-    const __default     = self::NEW;
+    private const COMMUNITY     = 'COMMUNITY';
+    private const BEST          = 'BEST';
+    private const NEW           = 'NEW';
+    private const FEATURED      = 'FEATURED';
 }
