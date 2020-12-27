@@ -17,7 +17,7 @@ class UserTest extends TestCase
         parent::setUp();
 
         $this->username     = 'oliverearl';
-        $this->user         = (new UserRepository())->getUser($this->username);
+        $this->user         = (new UserRepository())->getUser($this->username, true, true, true);
     }
 
     /**

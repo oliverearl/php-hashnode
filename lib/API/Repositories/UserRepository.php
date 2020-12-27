@@ -3,6 +3,7 @@
 namespace Hashnode\Api\Repositories;
 
 use GraphQL\Query;
+
 use Hashnode\Api\Publication;
 use Hashnode\Api\SocialMedia;
 use Hashnode\Api\User;
@@ -10,13 +11,15 @@ use Hashnode\Exceptions\QueryException;
 
 class UserRepository extends Repository
 {
+    const FIELD_NAME = 'user';
+
     public function getUser(string $username,
                             bool $socialMedia = false,
                             bool $publication = false,
                             bool $followers = false): User
     {
         try {
-            $graphql = (new Query('user'))
+            $graphql = (new Query(self::FIELD_NAME))
                 ->setArguments(['username' => $username])
                 ->setSelectionSet(
                     [
@@ -41,7 +44,9 @@ class UserRepository extends Repository
                         // followers
                     ],
                 );
-            $results = $this->client->getRawAccess()->runQuery($graphql, true)->getData()['user'];
+            $results = $this->client->getRawAccess()
+                ->runQuery($graphql, true)
+                ->getData()[self::FIELD_NAME];
 
             if ($socialMedia) $results = array_merge($results, $this->getSocialMedia($username));
             //if ($publication) $results[] = $this->getPublication($username);
@@ -64,7 +69,7 @@ class UserRepository extends Repository
 
     protected function subquery(string $username, string $fieldName, array $properties): array
     {
-        $graphql = (new Query('user'))
+        $graphql = (new Query(self::FIELD_NAME))
             ->setArguments(['username' => $username])
             ->setSelectionSet(
                 [
@@ -75,7 +80,7 @@ class UserRepository extends Repository
                 ]
             );
 
-        return $this->client->getRawAccess()->runQuery($graphql, true)->getData()['user'];
+        return $this->client->getRawAccess()->runQuery($graphql, true)->getData()[self::FIELD_NAME];
     }
 
     protected function getFollowers(string $username): array

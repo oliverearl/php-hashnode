@@ -2,10 +2,10 @@
 
 namespace Hashnode\Tests;
 
-use Hashnode\Api\SocialMedia;
 use PHPUnit\Framework\TestCase;
 
 use Hashnode\Api\User;
+use Hashnode\Api\SocialMedia;
 use Hashnode\Api\Repositories\UserRepository;
 
 class UserRepositoryTest extends TestCase
