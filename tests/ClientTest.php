@@ -3,6 +3,7 @@
 namespace Hashnode\Tests;
 
 use Faker\Factory;
+use Faker\Generator;
 use GraphQL\Client as GraphQLClient;
 use PHPUnit\Framework\TestCase;
 
@@ -10,7 +11,7 @@ use Hashnode\Client;
 
 class ClientTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
     protected function setUp(): void
     {
