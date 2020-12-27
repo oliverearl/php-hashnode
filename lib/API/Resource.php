@@ -21,4 +21,15 @@ abstract class Resource
     {
         return json_encode($this->toArray());
     }
+
+    public function getProperties(): array
+    {
+        $array = [];
+        $class = get_class($this);
+
+        foreach (array_keys(get_class_vars($class)) as $var) {
+            $array[] = $var;
+        }
+        return $array;
+    }
 }
