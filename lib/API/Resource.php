@@ -9,9 +9,16 @@ abstract class Resource
     public function toArray(): array
     {
         $array = get_object_vars($this);
+        return $this->arrayBuilder($array);
+    }
+
+    protected function arrayBuilder(array $array): array
+    {
         foreach ($array as $key => $value) {
             if (is_subclass_of($value, Resource::class)) {
-                $array[$key] = $value->toArray();
+                $array[$key] = $this->arrayBuilder(get_object_vars($value));
+            } else if (is_array($value)) {
+                $array[$key] = $this->arrayBuilder($value);
             }
         }
         return $array;
