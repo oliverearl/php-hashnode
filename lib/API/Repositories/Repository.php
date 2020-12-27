@@ -12,4 +12,9 @@ abstract class Repository
     {
         $this->client = $client ?: Client::getInstance();
     }
+
+    public function getClient(): Client
+    {
+        return $this->client;
+    }
 }
