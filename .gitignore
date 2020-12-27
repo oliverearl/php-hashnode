@@ -5,3 +5,4 @@ vendor/
 .DS_Store
 .phpunit.result.cache
 Thumbs.db
+*.code-workspace
