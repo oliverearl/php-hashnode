@@ -4,13 +4,13 @@ namespace Hashnode\Api;
 
 class SocialMedia extends Resource
 {
-    protected string $twitter;
-    protected string $github;
-    protected string $stackoverflow;
-    protected string $linkedin;
-    protected string $google;
-    protected string $website;
-    protected string $facebook;
+    protected ?string $twitter;
+    protected ?string $github;
+    protected ?string $stackoverflow;
+    protected ?string $linkedin;
+    protected ?string $google;
+    protected ?string $website;
+    protected ?string $facebook;
 
     public function __construct(array $properties)
     {

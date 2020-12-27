@@ -9,11 +9,11 @@ class Client
     const HASHNODE_API_ENDPOINT = 'https://api.hashnode.com';
     const HASHNODE_API_VERSION = '1.0.0';
 
-    private static $instance;
-    private $apiKey;
-    private $apiEndpoint;
-    private $apiVersion;
-    private $gqlClient;
+    private static ?Client $instance = null;
+    private string $apiKey;
+    private string $apiEndpoint;
+    private string $apiVersion;
+    private GraphQLClient $gqlClient;
 
     private function __construct(?string $apiKey = null,
                                  ?string $apiEndpoint = null,

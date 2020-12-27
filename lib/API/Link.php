@@ -4,10 +4,10 @@ namespace Hashnode\Api;
 
 class Link
 {
-    protected string $hashnode;
-    protected string $website;
-    protected string $github;
-    protected string $twitter;
+    protected ?string $hashnode;
+    protected ?string $website;
+    protected ?string $github;
+    protected ?string $twitter;
 
     /**
      * @return string

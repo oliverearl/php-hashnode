@@ -4,25 +4,25 @@ namespace Hashnode\Api;
 
 class User extends Resource
 {
-    protected string $_id;
-    protected string $username;
-    protected string $name;
-    protected string $tagline;
-    protected bool $isEvangelist;
-    protected string $dateJoined;
-    protected SocialMedia $socialMedia;
-    protected int $numFollowing;
-    protected int $numFollowers;
-    protected bool $isDeactivated;
-    protected string $location;
-    protected string $photo;
-    protected string $coverImage;
-    protected int $numPosts;
-    protected int $numReactions;
-    protected Publication $publication;
-    protected string $blogHandle;
-    protected string $publicationDomain;
-    protected array $followers;
+    protected ?string $_id;
+    protected ?string $username;
+    protected ?string $name;
+    protected ?string $tagline;
+    protected ?bool $isEvangelist;
+    protected ?string $dateJoined;
+    protected ?SocialMedia $socialMedia;
+    protected ?int $numFollowing;
+    protected ?int $numFollowers;
+    protected ?bool $isDeactivated;
+    protected ?string $location;
+    protected ?string $photo;
+    protected ?string $coverImage;
+    protected ?int $numPosts;
+    protected ?int $numReactions;
+    protected ?Publication $publication;
+    protected ?string $blogHandle;
+    protected ?string $publicationDomain;
+    protected ?array $followers;
 
     public function __construct(array $properties)
     {
