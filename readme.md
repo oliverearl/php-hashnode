@@ -61,7 +61,7 @@
 ### Built With
 
 * [PHP GraphQL Client](https://github.com/mghoneimy/php-graphql-client)
-* [PHP (7.1 and above)](https://www.php.net/)
+* [PHP (7.4 and above)](https://www.php.net/)
 * [PHPUnit](https://phpunit.de/) and [Faker](https://www.github.com/fzaninotto/faker) for testing.
 
 <!-- GETTING STARTED -->
