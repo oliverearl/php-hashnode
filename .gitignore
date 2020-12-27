@@ -2,6 +2,7 @@
 .phpunit.cache/
 .vscode/
 vendor/
+examples/debugger.php
 .DS_Store
 .phpunit.result.cache
 Thumbs.db
