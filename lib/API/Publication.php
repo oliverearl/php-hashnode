@@ -32,6 +32,7 @@ class Publication extends Resource
     protected Link $links;
     protected array $posts = [];
 
+    /** @noinspection PhpMissingParentConstructorInspection */
     public function __construct(array $properties = [])
     {
         foreach ($properties as $key => $value) {

@@ -6,12 +6,14 @@ class StoriesFeed extends Resource
 {
     protected array $posts = [];
 
+    /** @noinspection PhpMissingParentConstructorInspection */
     public function __construct(array $properties = [])
     {
-        foreach($properties as $property) {
-            if (is_array($property)) {
-                $posts[] = new Post($property);
-            }
-        }
+        $this->posts = $properties;
+    }
+
+    public function getPosts(): array
+    {
+        return $this->posts;
     }
 }

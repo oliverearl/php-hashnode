@@ -6,6 +6,15 @@ use Hashnode\Client;
 
 abstract class Resource
 {
+    public function __construct(array $properties = [])
+    {
+        foreach ($properties as $key => $value) {
+            if (property_exists($this, $key) && !is_null($value)) {
+                $this->$key = $value;
+            }
+        }
+    }
+
     public function toArray(): array
     {
         $array = get_object_vars($this);

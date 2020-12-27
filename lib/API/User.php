@@ -24,6 +24,7 @@ class User extends Resource
     protected ?string $publicationDomain;
     protected array $followers = [];
 
+    /** @noinspection PhpMissingParentConstructorInspection */
     public function __construct(array $properties = [])
     {
         foreach ($properties as $key => $value) {
