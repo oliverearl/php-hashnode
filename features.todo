@@ -6,9 +6,9 @@ Posts:
         - (by page default to zero)
     - Get a specific "detailed" post
         - (requires hostname and slug)
-    - Get a feed of posts
-        - (by page default to zero)
-        - by feed type (communiy, best, new, featured)
+    - Get a feed of posts @done
+        - (by page default to zero) @done
+        - by feed type (community, best, new, featured) @done
 
 Mutations:
     - Follow a user
