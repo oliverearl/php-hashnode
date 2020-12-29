@@ -2,6 +2,7 @@
 
 namespace Hashnode\Tests\Unit\Queries;
 
+use Hashnode\Queries\Reaction\ReactionQuery;
 use Hashnode\Queries\Reaction\ReactionsAndCountQuery;
 use Hashnode\Queries\Reply\ReplyQuery;
 use Hashnode\Queries\Response\ResponseQuery;
@@ -56,6 +57,6 @@ class ResponseQueryTest extends TestCase
     {
         $query = $this->query->selectReactionsByCurrentUser();
 
-        $this->assertInstanceOf(ResponseQuery::class, $query);
+        $this->assertInstanceOf(ReactionQuery::class, $query);
     }
 }
