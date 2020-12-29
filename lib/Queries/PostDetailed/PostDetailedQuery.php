@@ -274,7 +274,7 @@ class PostDetailedQuery extends Query
     public function selectReactionsByCurrentUser(ReactionsByCurrentUserArgument $argsObject = null): ReactionQuery
     {
         $object = new ReactionQuery('reactionsByCurrentUser');
-        if ($argsObject !== null) {
+        if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
         }
         $this->selectField($object);

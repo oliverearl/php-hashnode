@@ -6,7 +6,7 @@ class RootAmasArgument extends Argument
 {
     protected ?int $page;
 
-    public function setPage(?int $page): RootAmasArgument
+    public function setPage(?int $page = 0): RootAmasArgument
     {
         $this->page = $page;
 

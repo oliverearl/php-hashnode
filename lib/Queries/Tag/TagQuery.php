@@ -108,7 +108,7 @@ class TagQuery extends Query
 
     public function selectLeaderboard(LeaderboardArgument $argsObject = null): TagLeaderboardQuery
     {
-        $object = new TagLeaderBoardQuery('leaderboard');
+        $object = new TagLeaderboardQuery('leaderboard');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
