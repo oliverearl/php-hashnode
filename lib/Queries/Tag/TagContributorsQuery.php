@@ -8,11 +8,11 @@ use Hashnode\Queries\Query;
 
 class TagContributorsQuery extends Query
 {
-    const OBJECT_NAME = "TagContributors";
+    const OBJECT_NAME = 'TagContributors';
 
     public function selectManagers(ContributorArgument $argsObject = null): TagManagerQuery
     {
-        $object = new TagManagerQuery("managers");
+        $object = new TagManagerQuery('managers');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -25,7 +25,7 @@ class TagContributorsQuery extends Query
 
     public function selectLeaders(ContributorsLeadersArgument $argsObject = null): TagContributorLeadersQuery
     {
-        $object = new TagContributorLeadersQuery("leaders");
+        $object = new TagContributorLeadersQuery('leaders');
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
         }

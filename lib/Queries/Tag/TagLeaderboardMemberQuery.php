@@ -8,11 +8,11 @@ use Hashnode\Queries\User\UserQuery;
 
 class TagLeaderboardMemberQuery extends Query
 {
-    const OBJECT_NAME = "TagLeaderBoardMember";
+    const OBJECT_NAME = 'TagLeaderBoardMember';
 
     public function selectUser(LeaderboardMemberUserArgument $argsObject = null): UserQuery
     {
-        $object = new UserQuery("user");
+        $object = new UserQuery('user');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -25,14 +25,14 @@ class TagLeaderboardMemberQuery extends Query
 
     public function selectAppreciations(): TagLeaderboardMemberQuery
     {
-        $this->selectField("appreciations");
+        $this->selectField('appreciations');
 
         return $this;
     }
 
     public function selectUpvotes(): TagLeaderboardMemberQuery
     {
-        $this->selectField("upvotes");
+        $this->selectField('upvotes');
 
         return $this;
     }

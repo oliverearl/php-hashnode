@@ -17,25 +17,25 @@ use Hashnode\Queries\User\UserQuery;
 
 class PostQuery extends Query
 {
-    const OBJECT_NAME = "Post";
+    const OBJECT_NAME = 'Post';
 
     public function selectId(): PostQuery
     {
-        $this->selectField("_id");
+        $this->selectField('_id');
 
         return $this;
     }
 
     public function selectFollowersCount(): PostQuery
     {
-        $this->selectField("followersCount");
+        $this->selectField('followersCount');
 
         return $this;
     }
 
     public function selectAuthor(AuthorArgument $argsObject = null): UserQuery
     {
-        $object = new UserQuery("author");
+        $object = new UserQuery('author');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -48,42 +48,42 @@ class PostQuery extends Query
 
     public function selectCuid(): PostQuery
     {
-        $this->selectField("cuid");
+        $this->selectField('cuid');
 
         return $this;
     }
 
     public function selectSlug(): PostQuery
     {
-        $this->selectField("slug");
+        $this->selectField('slug');
 
         return $this;
     }
 
     public function selectTitle(): PostQuery
     {
-        $this->selectField("title");
+        $this->selectField('title');
 
         return $this;
     }
 
     public function selectType(): PostQuery
     {
-        $this->selectField("type");
+        $this->selectField('type');
 
         return $this;
     }
 
     public function selectPopularity(): PostQuery
     {
-        $this->selectField("popularity");
+        $this->selectField('popularity');
 
         return $this;
     }
 
     public function selectReactionsByCurrentUser(ReactionsByCurrentUserArgument $argsObject = null): ReactionQuery
     {
-        $object = new ReactionQuery("reactionsByCurrentUser");
+        $object = new ReactionQuery('reactionsByCurrentUser');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -96,28 +96,28 @@ class PostQuery extends Query
 
     public function selectTotalReactions(): PostQuery
     {
-        $this->selectField("totalReactions");
+        $this->selectField('totalReactions');
 
         return $this;
     }
 
     public function selectBookmarkedIn(): PostQuery
     {
-        $this->selectField("bookmarkedIn");
+        $this->selectField('bookmarkedIn');
 
         return $this;
     }
 
     public function selectPartOfPublication(): PostQuery
     {
-        $this->selectField("partOfPublication");
+        $this->selectField('partOfPublication');
 
         return $this;
     }
 
     public function selectContributors(ContributorsArgument $argsObject = null): ContributorQuery
     {
-        $object = new ContributorQuery("contributors");
+        $object = new ContributorQuery('contributors');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -130,35 +130,35 @@ class PostQuery extends Query
 
     public function selectIsActive(): PostQuery
     {
-        $this->selectField("isActive");
+        $this->selectField('isActive');
 
         return $this;
     }
 
     public function selectReplyCount(): PostQuery
     {
-        $this->selectField("replyCount");
+        $this->selectField('replyCount');
 
         return $this;
     }
 
     public function selectResponseCount(): PostQuery
     {
-        $this->selectField("responseCount");
+        $this->selectField('responseCount');
 
         return $this;
     }
 
     public function selectDateAdded(): PostQuery
     {
-        $this->selectField("dateAdded");
+        $this->selectField('dateAdded');
 
         return $this;
     }
 
     public function selectTags(TagsArgument $argsObject = null): TagQuery
     {
-        $object = new TagQuery("tags");
+        $object = new TagQuery('tags');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -170,42 +170,42 @@ class PostQuery extends Query
 
     public function selectBrief(): PostQuery
     {
-        $this->selectField("brief");
+        $this->selectField('brief');
 
         return $this;
     }
 
     public function selectCoverImage(): PostQuery
     {
-        $this->selectField("coverImage");
+        $this->selectField('coverImage');
 
         return $this;
     }
 
     public function selectIsAnonymous(): PostQuery
     {
-        $this->selectField("isAnonymous");
+        $this->selectField('isAnonymous');
 
         return $this;
     }
 
     public function selectDateUpdated(): PostQuery
     {
-        $this->selectField("dateUpdated");
+        $this->selectField('dateUpdated');
 
         return $this;
     }
 
     public function selectDateFeatured(): PostQuery
     {
-        $this->selectField("dateFeatured");
+        $this->selectField('dateFeatured');
 
         return $this;
     }
 
     public function selectReactions(ReactionsArgument $argsObject = null): ReactionQuery
     {
-        $object = new ReactionQuery("reactions");
+        $object = new ReactionQuery('reactions');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -218,7 +218,7 @@ class PostQuery extends Query
 
     public function selectPoll(PollArgument $argsObject = null): PollQuery
     {
-        $object = new PollQuery("poll");
+        $object = new PollQuery('poll');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -231,7 +231,7 @@ class PostQuery extends Query
 
     public function selectContentMarkdown(): PostQuery
     {
-        $this->selectField("contentMarkdown");
+        $this->selectField('contentMarkdown');
 
         return $this;
     }

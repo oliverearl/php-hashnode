@@ -8,11 +8,11 @@ use Hashnode\Queries\Query;
 
 class TagContributorLeadersQuery extends Query
 {
-    const OBJECT_NAME = "TagContributorLeaders";
+    const OBJECT_NAME = 'TagContributorLeaders';
 
     public function selectMonthlyTopDevelopers(ContributorLeadersMonthlyTopDevelopersArgument $argsObject = null): TagLeaderboardMemberQuery
     {
-        $object = new TagLeaderboardMemberQuery("monthlyTopDevelopers");
+        $object = new TagLeaderboardMemberQuery('monthlyTopDevelopers');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -25,7 +25,7 @@ class TagContributorLeadersQuery extends Query
 
     public function selectAllTimeTopDevelopers(ContributorLeadersAllTimeTopDevelopersArgument $argsObject = null): TagLeaderboardMemberQuery
     {
-        $object = new TagLeaderboardMemberQuery("allTimeTopDevelopers");
+        $object = new TagLeaderboardMemberQuery('allTimeTopDevelopers');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());

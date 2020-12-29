@@ -12,32 +12,32 @@ use Hashnode\Queries\User\UserQuery;
 
 class ReplyQuery extends Query
 {
-    const OBJECT_NAME = "Reply";
+    const OBJECT_NAME = 'Reply';
 
     public function selectId(): ReplyQuery
     {
-        $this->selectField("_id");
+        $this->selectField('_id');
 
         return $this;
     }
 
     public function selectContent(): ReplyQuery
     {
-        $this->selectField("content");
+        $this->selectField('content');
 
         return $this;
     }
 
     public function selectContentMarkdown(): ReplyQuery
     {
-        $this->selectField("contentMarkdown");
+        $this->selectField('contentMarkdown');
 
         return $this;
     }
 
     public function selectAuthor(AuthorArgument $argsObject = null): UserQuery
     {
-        $object = new UserQuery("author");
+        $object = new UserQuery('author');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -50,35 +50,35 @@ class ReplyQuery extends Query
 
     public function selectDateAdded(): ReplyQuery
     {
-        $this->selectField("dateAdded");
+        $this->selectField('dateAdded');
 
         return $this;
     }
 
     public function selectIsActive(): ReplyQuery
     {
-        $this->selectField("isActive");
+        $this->selectField('isActive');
 
         return $this;
     }
 
     public function selectStamp(): ReplyQuery
     {
-        $this->selectField("stamp");
+        $this->selectField('stamp');
 
         return $this;
     }
 
     public function selectTotalReactions(): ReplyQuery
     {
-        $this->selectField("totalReactions");
+        $this->selectField('totalReactions');
 
         return $this;
     }
 
     public function selectReactions(ReactionsArgument $argsObject = null): ReactionsAndCountQuery
     {
-        $object = new ReactionsAndCountQuery("reactions");
+        $object = new ReactionsAndCountQuery('reactions');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -91,7 +91,7 @@ class ReplyQuery extends Query
 
     public function selectReactionsByCurrentUser(ReactionsByCurrentUserArgument $argsObject = null): ReactionQuery
     {
-        $object = new ReactionQuery("reactionsByCurrentUser");
+        $object = new ReactionQuery('reactionsByCurrentUser');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());

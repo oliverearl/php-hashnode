@@ -14,88 +14,88 @@ use Hashnode\Queries\Query;
 
 class TagQuery extends Query
 {
-    const OBJECT_NAME = "Tag";
+    const OBJECT_NAME = 'Tag';
 
     public function selectId(): TagQuery
     {
-        $this->selectField("_id");
+        $this->selectField('_id');
 
         return $this;
     }
 
     public function selectName(): TagQuery
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectSlug(): TagQuery
     {
-        $this->selectField("slug");
+        $this->selectField('slug');
 
         return $this;
     }
 
     public function selectIsApproved(): TagQuery
     {
-        $this->selectField("isApproved");
+        $this->selectField('isApproved');
 
         return $this;
     }
 
     public function selectLogo(): TagQuery
     {
-        $this->selectField("logo");
+        $this->selectField('logo');
 
         return $this;
     }
 
     public function selectIsActive(): TagQuery
     {
-        $this->selectField("isActive");
+        $this->selectField('isActive');
 
         return $this;
     }
 
     public function selectNumPosts(): TagQuery
     {
-        $this->selectField("numPosts");
+        $this->selectField('numPosts');
 
         return $this;
     }
 
     public function selectFollowersCount(): TagQuery
     {
-        $this->selectField("followersCount");
+        $this->selectField('followersCount');
 
         return $this;
     }
 
     public function selectTagline(): TagQuery
     {
-        $this->selectField("tagline");
+        $this->selectField('tagline');
 
         return $this;
     }
 
     public function selectWiki(): TagQuery
     {
-        $this->selectField("wiki");
+        $this->selectField('wiki');
 
         return $this;
     }
 
     public function selectWikiMarkdown(): TagQuery
     {
-        $this->selectField("wikiMarkdown");
+        $this->selectField('wikiMarkdown');
 
         return $this;
     }
 
     public function selectStats(StatsArgument $argsObject = null): TagStatsQuery
     {
-        $object = new TagStatsQuery("stats");
+        $object = new TagStatsQuery('stats');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -108,7 +108,7 @@ class TagQuery extends Query
 
     public function selectLeaderboard(LeaderboardArgument $argsObject = null): TagLeaderboardQuery
     {
-        $object = new TagLeaderBoardQuery("leaderboard");
+        $object = new TagLeaderBoardQuery('leaderboard');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -121,7 +121,7 @@ class TagQuery extends Query
 
     public function selectManagers(ManagerArgument $argsObject = null): TagManagerQuery
     {
-        $object = new TagManagerQuery("managers");
+        $object = new TagManagerQuery('managers');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -134,7 +134,7 @@ class TagQuery extends Query
 
     public function selectSocialMedia(SocialMediaArgument $argsObject = null): TagSocialMediaQuery
     {
-        $object = new TagSocialMediaQuery("socialMedia");
+        $object = new TagSocialMediaQuery('socialMedia');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -147,7 +147,7 @@ class TagQuery extends Query
 
     public function selectPosts(PostsArgument $argsObject = null): PostQuery
     {
-        $object = new PostQuery("posts");
+        $object = new PostQuery('posts');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -160,7 +160,7 @@ class TagQuery extends Query
 
     public function selectContributors(ContributorArgument $argsObject = null): ContributorQuery
     {
-        $object = new ContributorQuery("contributors");
+        $object = new ContributorQuery('contributors');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());

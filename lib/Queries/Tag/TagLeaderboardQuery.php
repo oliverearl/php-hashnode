@@ -12,7 +12,7 @@ class TagLeaderboardQuery extends Query
 
     public function selectMonthlyTopDevelopers(LeaderboardMonthlyTopDevelopersArgument $argsObject = null): TagLeaderboardMemberQuery
     {
-        $object = new TagLeaderboardMemberQuery("monthlyTopDevelopers");
+        $object = new TagLeaderboardMemberQuery('monthlyTopDevelopers');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -25,7 +25,7 @@ class TagLeaderboardQuery extends Query
 
     public function selectAllTimeTopDevelopers(LeaderboardAllTimeTopDevelopersArgument $argsObject = null): TagLeaderboardMemberQuery
     {
-        $object = new TagLeaderboardMemberQuery("allTimeTopDevelopers");
+        $object = new TagLeaderboardMemberQuery('allTimeTopDevelopers');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());

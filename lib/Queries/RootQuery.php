@@ -14,11 +14,11 @@ use Hashnode\Queries\User\UserQuery;
 
 class RootQuery extends Query
 {
-    const OBJECT_NAME = "";
+    const OBJECT_NAME = '';
 
     public function selectUser(RootUserArgument $argsObject = null): UserQuery
     {
-        $object = new UserQuery("user");
+        $object = new UserQuery('user');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -31,7 +31,7 @@ class RootQuery extends Query
 
     public function selectStoriesFeed(RootStoriesFeedArgument $argsObject = null): PostQuery
     {
-        $object = new PostQuery("storiesFeed");
+        $object = new PostQuery('storiesFeed');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -44,7 +44,7 @@ class RootQuery extends Query
 
     public function selectAmas(RootAmasArgument $argsObject = null): PostQuery
     {
-        $object = new PostQuery("amas");
+        $object = new PostQuery('amas');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -57,7 +57,7 @@ class RootQuery extends Query
 
     public function selectPost(RootPostArgument $argsObject = null): PostDetailedQuery
     {
-        $object = new PostDetailedQuery("post");
+        $object = new PostDetailedQuery('post');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
@@ -70,7 +70,7 @@ class RootQuery extends Query
 
     public function selectTagCategories(RootTagCategoriesArgument $argsObject = null): TagCategoryQuery
     {
-        $object = new TagCategoryQuery("tagCategories");
+        $object = new TagCategoryQuery('tagCategories');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());

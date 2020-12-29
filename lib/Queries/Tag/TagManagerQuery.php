@@ -8,25 +8,25 @@ use Hashnode\Queries\User\UserQuery;
 
 class TagManagerQuery extends Query
 {
-    const OBJECT_NAME = "TagManager";
+    const OBJECT_NAME = 'TagManager';
 
     public function selectId(): TagManagerQuery
     {
-        $this->selectField("_id");
+        $this->selectField('_id');
 
         return $this;
     }
 
     public function selectRole(): TagManagerQuery
     {
-        $this->selectField("role");
+        $this->selectField('role');
 
         return $this;
     }
 
     public function selectUser(ManagerArgument $argsObject = null): UserQuery
     {
-        $object = new UserQuery("user");
+        $object = new UserQuery('user');
 
         if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());

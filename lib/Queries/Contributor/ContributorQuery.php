@@ -4,7 +4,7 @@ namespace Hashnode\Queries\Contributor;
 
 use Hashnode\Arguments\Contributor\UserArgument;
 use Hashnode\Queries\Query;
-use Hashnode\Queries\UserQuery;
+use Hashnode\Queries\User\UserQuery;
 
 class ContributorQuery extends Query
 {

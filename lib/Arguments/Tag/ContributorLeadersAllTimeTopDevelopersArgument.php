@@ -7,5 +7,3 @@ use Hashnode\Arguments\Argument;
 class ContributorLeadersAllTimeTopDevelopersArgument extends Argument
 {
 }
-
-;
