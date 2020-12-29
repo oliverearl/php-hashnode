@@ -1,40 +1,41 @@
 {
-    "name": "oliverearl/php-hashnode",
-    "description": "A lightweight, object-oriented library for interacting with Hashnode's GraphQL API.",
-    "type": "library",
-    "keywords": [
-        "hashnode",
-        "api",
-        "graphql"
-    ],
-    "require": {
-        "php": "^7.4",
-        "gmostafa/php-graphql-client": "^1.8",
-        "gmostafa/php-graphql-oqm": "^1.2"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "codacy/coverage": "^1.4.0",
-        "fzaninotto/faker": "^1.9"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Oliver Earl",
-            "email": "oliver@oliverearl.co.uk"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Hashnode\\": "lib/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Hashnode\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "php vendor/bin/phpunit ./tests/ --testdox"
+  "name": "oliverearl/php-hashnode",
+  "description": "A lightweight, object-oriented library for interacting with Hashnode's GraphQL API.",
+  "type": "library",
+  "keywords": [
+    "hashnode",
+    "api",
+    "graphql"
+  ],
+  "require": {
+    "php": "^7.4",
+    "gmostafa/php-graphql-client": "^1.8",
+    "gmostafa/php-graphql-oqm": "^1.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "codacy/coverage": "^1.4.0",
+    "fzaninotto/faker": "^1.9"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oliver Earl",
+      "email": "oliver@oliverearl.co.uk"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Hashnode\\": "lib/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hashnode\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "php vendor/bin/phpunit ./tests/",
+    "testdox": "php vendor/bin/phpunit ./tests/ --testdox"
+  }
 }

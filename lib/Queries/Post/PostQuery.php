@@ -119,7 +119,7 @@ class PostQuery extends Query
     {
         $object = new ContributorQuery("contributors");
 
-        if (!is_null($argsObject))  {
+        if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
         }
 
@@ -220,7 +220,7 @@ class PostQuery extends Query
     {
         $object = new PollQuery("poll");
 
-        if (!is_null($argsObject))  {
+        if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
         }
 

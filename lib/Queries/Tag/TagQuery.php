@@ -123,7 +123,7 @@ class TagQuery extends Query
     {
         $object = new TagManagerQuery("managers");
 
-        if (!is_null($argsObject)){
+        if (!is_null($argsObject)) {
             $object->appendArguments($argsObject->toArray());
         }
 

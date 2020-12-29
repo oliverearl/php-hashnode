@@ -4,4 +4,6 @@ namespace Hashnode\Arguments\Tag;
 
 use Hashnode\Arguments\Argument;
 
-class LeaderboardMonthlyTopDevelopersArgument extends Argument {}
+class LeaderboardMonthlyTopDevelopersArgument extends Argument
+{
+}

@@ -2,4 +2,6 @@
 
 namespace Hashnode\Arguments;
 
-class RootTagCategoriesArgument extends Argument {}
+class RootTagCategoriesArgument extends Argument
+{
+}

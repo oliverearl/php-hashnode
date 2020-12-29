@@ -4,11 +4,11 @@ namespace Hashnode\Enums;
 
 class FeedTypeEnum extends Enum
 {
-    const BEST =        'BEST';
+    const BEST = 'BEST';
 
-    const COMMUNITY =   'COMMUNITY';
+    const COMMUNITY = 'COMMUNITY';
 
-    const FEATURED =    'FEATURED';
+    const FEATURED = 'FEATURED';
 
-    const NEW =         'NEW';
+    const NEW = 'NEW';
 }

@@ -4,9 +4,9 @@ namespace Hashnode\Enums;
 
 class TagsPostFilterEnum extends Enum
 {
-    const BEST      = 'BEST';
+    const BEST = 'BEST';
 
-    const HOT       = 'HOT';
+    const HOT = 'HOT';
 
-    const RECENT    = 'RECENT';
+    const RECENT = 'RECENT';
 }
