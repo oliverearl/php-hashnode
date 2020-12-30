@@ -1,37 +1,38 @@
-name: PHP Composer
+name: Testing suite
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    workflow_dispatch:
+    push:
+        branches:
+            - master
+            - development
+    pull_request:
+        branches:
+            - master
 
 jobs:
-  build:
+    unit-test:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest]
+                php-versions: ['7.4']
+        name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.os }}
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v2
 
-    runs-on: ubuntu-latest
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-versions }}
+                  extensions: mbstring, intl, zip
 
-    steps:
-    - uses: actions/checkout@v2
+            - name: Composer install
+              run: (rm composer.lock || true) &&  composer update
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
+            - name: PHP version
+              run: php --version
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
-
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
-
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    - name: Run test suite
-      run: composer run-script test
+            - name: Run tests
+              run: composer run testdox
