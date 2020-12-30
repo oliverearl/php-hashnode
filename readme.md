@@ -53,55 +53,107 @@
   </ol>
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 ### Built With
 
 * [PHP GraphQL Client](https://github.com/mghoneimy/php-graphql-client)
-* [PHP (7.4 and above)](https://www.php.net/)
+
+* [PHP GraphQL OQM](https://github.com/mghoneimy/php-graphql-oqm)
+
 * [PHPUnit](https://phpunit.de/) and [Faker](https://www.github.com/fzaninotto/faker) for testing.
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+* [PHP 7.4 or greater](https://php.net)
+
+* [Composer](https://getcomposer.org)
 
 ### Installation
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/oliverearl/php-hashnode.git
    ```
+
 2. Install Composer packages
+
    ```sh
    composer install
    ```
 
-Hopefully, this library will be available to install via Composer in the near future.
+This library will be made available for install via Composer once it has reached a more complete state.
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After installation, the library is ready to use out-of-the-box. A client instance and GraphQL root query object can be made like thus:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```php
+$client = new Hashnode();
 
-<!-- ROADMAP -->
+$query = new RootQuery();
+```
+
+If you wish to specify an override for the default Hashnode endpoint, and/or specify your Hashnode API token (if you need one, you can get one [here](https://hashnode.com/settings/developer)) you can add them as constructor parameters. **You don't need an API token for most operations at present.**
+
+```php
+$client = new Hashnode('https://some-alternative-endpoint.hashnode.com', [
+  'Authorization' => 'my-api-key-goes-here'
+]);
+```
+
+Remember when interacting with GraphQL APIs, you have to specifically indicate what information you want to request. If you wanted to request a stories feed with a title, date, and the author's username, you could do something like this:
+
+*(Also, this is assuming you utilise 'use statements' and don't have to resolve namespaces fully.)*
+
+```php
+$query->selectStoriesFeed((new RootStoriesFeedArgument())->setType('NEW'))
+    ->selectTitle()
+    ->selectDateAdded()
+    ->selectAuthor((new AuthorArgument()))
+    ->selectUsername();
+
+$results = $client->runQuery($query->getQuery())->getData();
+```
+
+_For more examples, please refer to the [Documentation](https://github.com/oliverearl/php-hashnode/tree/master/docs) or check available [examples](https://github.com/oliverearl/php-hashnode/tree/master/examples)._
+
 ## Roadmap
 
-See the [open issues](https://github.com/oliverearl/php-hashnode/issues) for a list of proposed features (and known issues).
+The following is on the roadmap for upcoming releases:
 
-<!-- CONTRIBUTING -->
+* API behaviours that require an API key (creating, updating, deleting)
+
+* Changes to make the library easier to use and potentially less dependent on the underlying GraphQL libraries
+
+* Cleaner, less lasagna-like code
+
+* Integration PHPUnit tests
+
+Also, see the [open issues](https://github.com/oliverearl/php-hashnode/issues) for a list of user-proposed features (and known issues).
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+### Particularly welcome contributions
+
+* Bugfixes and beneficiary changes to existing functionality.
+
+* New functionality that fulfills unimplemented areas of the API.
+
+* Enhancements to existing or production of additional PHPUnit tests.
+
+* Documentation, both in the source code and in the `docs` directory.
+
+* Examples of the library in use within the `examples` directory.
+
+### Instructions
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -109,24 +161,30 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<!-- LICENSE -->
+## Testing
+
+The suite of PHPUnit tests can be run with `composer run test` at your terminal, assuming a full installation of Composer.
+
+Alternatively, you can retrieve easy-to-read *testdox* by running `composer run testdox`.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<!-- CONTACT -->
 ## Contact
 
 Oliver Earl - [@compscioliver](https://twitter.com/compscioliver) - oliver@oliverearl.co.uk
 
 Project Link: [https://github.com/oliverearl/php-hashnode](https://github.com/oliverearl/php-hashnode)
 
-<!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [gmostafa/php-graphql-client](https://github.com/mghoneimy/php-graphql-client)
-* [The amazing people over at Hashnode](https://www.hashnode.com)
-* [Hashnode API](https://api.hashnode.com)
+* [Mostafa Ghoneimy et al for the underpinning GraphQL technologies.](https://github.com/mghoneimy)
+
+* [The amazing people over at Hashnode.](https://www.hashnode.com)
+
+* [Hashnode's GraphQL API](https://api.hashnode.com)
+
 * [Othneil Drew for the README template](https://github.com/othneildrew/Best-README-Template)
 
 [contributors-shield]: https://img.shields.io/github/contributors/oliverearl/php-hashnode.svg?style=for-the-badge
