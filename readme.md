@@ -173,7 +173,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Oliver Earl - [@compscioliver](https://twitter.com/compscioliver) - oliver@oliverearl.co.uk
+Oliver Earl - oliver@oliverearl.co.uk
 
 Project Link: [https://github.com/oliverearl/php-hashnode](https://github.com/oliverearl/php-hashnode)
 
